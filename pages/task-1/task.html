@@ -9,175 +9,215 @@
        <link href="../../dist/output.css" rel="stylesheet">
     </head>
     <body class = "bg-[#FFFFFF]">
-        <div class="pt-20 px-6 md:px-20 lg:px-48">
-            <!-- Header -->
-            <hr>
-            <h1 class = "font-inter font-semibold text-lg text-secondary pt-2 pb-2">
-                TASK 1: FINDING INFORMATION
-            </h1>
-            <p class = "font-inter text-md text-secondary mt-1 italic pb-2">
-                Locate the company email address
-            </p>
-            <hr class = "mb-4">
+        <div class="flex min-h-screen">
+            <!-- Sidebar -->
+            <aside class="w-48 bg-primary text-white p-6 flex flex-col">
+                <button class="absolute top-4 left-8 text-white text-2xl">
+                    ✕
+                </button>
 
-            <div class = "relative" id = "taskWrapper">
-                <!-- Task background -->
-                <div class = "task-container bg-[#e8ecf8] font-inter p-12 rounded-3xl text-secondary max-h-[50vh] overflow-y-scroll">
-                    <h1 class = "text-2xl font-bold mb-6">
-                        ABOUT US
+                <nav class="flex flex-col gap-3 pt-20">
+                    <a href="../main-experience.html"
+                    class="px-4 py-2 rounded-lg hover:bg-white hover:text-primary transition">
+                        Homepage
+                    </a>
+
+                    <a href="task-1/tutorial.html"
+                    class="bg-white text-primary px-4 py-2 rounded-lg font-semibold">
+                        Task 1
+                    </a>
+
+                    <a href="task-2/tutorial.html"
+                    class="px-4 py-2 rounded-lg hover:bg-white hover:text-primary transition">
+                        Task 2
+                    </a>
+                </nav>
+            </aside>
+            <main class="flex-1 pt-10 px-20">
+                <!-- Top Header -->
+                <div class="mb-10">
+                    <h1 class="text-2xl font-semibold text-secondary mb-6">
+                        Task 1: Finding Information
                     </h1>
 
-                    <p class = "text-base mb-12">
-                        BrightPath is a digital subscription service offering productivity tools and learning
-                        resources. Our platform helps users manage tasks, track goals, and stay organized across devices.
-                    </p>
+                    <!-- Progress Bar -->
+                    <div class="flex items-start gap-4 mb-2">
 
-                    <!-- Placeholder for image-->
-                    <div class = "bg-neutral-200 rounded-3xl p-8 mb-12">
-                        <p class = "text-center">Placeholder for image</p>
-                    </div>
+                        <!-- Step 1 -->
+                        <div class="flex-1 text-center relative">
+                            <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
 
-                    <!-- OUR SERVICES -->
-                    <h1 class = "text-2xl font-bold mb-6">
-                        OUR SERVICES
-                    </h1>
+                            <!-- Dot -->
+                            <div class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"></div>
 
-                    <p class = "text-base mb-2">
-                        We offer:
-                    </p>
-                    <ul class = "text-base list-disc list-inside mb-6">
-                        <li class = "mb-2">Personalized productivity dashboards</li>
-                        <li class = "mb-2">Cloud-based document storage</li>
-                        <li class = "mb-2">Weekly learning modules</li>
-                        <li class = "mb-2">Account customization features</li>
-                    </ul>
-                    <p class = "text-lg mb-12">
-                        All features are accessible via desktop and mobile.
-                    </p>
-
-                    <!-- SUPPORT -->
-                    <h1 class = "text-2xl font-bold mb-6">
-                        SUPPORT
-                    </h1>
-                    <p class = "text-base mb-4">
-                        We are committed to providing reliable service and responsive customer care. 
-                    </p>
-                    <p class = "text-base mb-4">
-                        If you experience technical issues, billing concerns, or account-related questions, our support team is here to help.
-                    </p>
-                    <p class = "text-base mb-12">
-                        You may also consult our Help Center for common troubleshooting guides. 
-                    </p>
-
-                    <!-- CONTACT -->
-                    <h1 class = "text-2xl font-bold mb-6">
-                        CONTACT
-                    </h1>
-                    <p class = "text-base mb-4">
-                        If you need further assistance, please contact our support team directly.
-                    </p>
-                    <p class = "text-base mb-4">
-                    Email: <span id = "emailLink" class = "text-primary underline cursor-pointer">support@brightpath.com</span>
-                    <br class = "mb-2">
-                    Phone: (123) 456-7890
-                    </p>
-                    <p class = "text-base mb-8">
-                        Our support team responds within 1-2 business days.
-                    </p>
-                </div>
-
-                <div class = "task-container bg-[#e8ecf8] mb-8 rounded-3xl mt-4">
-                    <div class = "rounded-3xl p-8">
-                        <div class = "flex">
-                            <!-- TUTORIAL -->
-                            <div class = "flex-1 bg-gradient-to-br from-primary to-purple-400 text-white
-                                        rounded-2xl relative z-40 px-6 py-4 shadow-[0_5px_30px_rgba(55,65,81,0.5)] text-center font-semibold
-                                        flex items-center justify-center gap-3">
-                                
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-6">
-                                    <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
-                                </svg>
-                                <span>TUTORIAL</span>
-                            </div>
-
-                            <!-- TASK -->
-                            <div class = "flex-1 bg-gradient-to-br from-primary to-purple-400 text-white -ml-8
-                                        rounded-2xl relative z-30 px-6 py-4 shadow-[0_5px_30px_rgba(55,65,81,0.5)] text-center font-semibold
-                                        flex items-center justify-center gap-3">
-                                
-                                <svg width="24" height="24" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
-                                    <circle r="90" cx="100" cy="100" fill="transparent" stroke="#828282" stroke-width="16px"></circle>
-                                    <circle r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="16px" stroke-linecap="round" stroke-dashoffset="164px" fill="transparent" stroke-dasharray="565.48px"></circle>
-                                </svg>
-                                <span>TASK</span>
-                            </div>
-
-                            <!-- BARRIER -->
-                            <div class = "flex-1 bg-gray-400 text-white -ml-8
-                                        rounded-2xl relative z-20 px-6 py-4 shadow-[0_5px_30px_rgba(55,65,81,0.5)] text-center font-semibold
-                                        flex items-center justify-center gap-3">
-                                
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-6">
-                                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <span>BARRIER</span>
-                            </div>
-
-                            <!-- REFLECTION -->
-                            <div class = "flex-1 bg-gray-400 text-white -ml-8
-                                        rounded-2xl relative z-10 px-6 py-4 shadow-[0_5px_30px_rgba(55,65,81,0.5)] text-center font-semibold
-                                        flex items-center justify-center gap-3">
-                                
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-6">
-                                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <span>REFLECTION</span>
-                            </div>
+                            <p class="text-sm text-gray-600 mt-4">Tutorial</p>
                         </div>
-                        <p class = "text-secondary text-lg mt-6 text-center"><span class = "font-semibold text-secondary-800">ACTION: Locate and click the email address using a mouse, keyboard or touchscreen.</p>
+
+                        <!-- Step 2 -->
+                        <div class="flex-1 text-center relative">
+                            <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+                            <!-- Dot -->
+                            <div class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"></div>
+
+                            <p class="text-sm text-gray-600 mt-4">Task</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex-1 text-center relative">
+                            <div class="h-2 bg-gray-300 rounded-full mb-4"></div>
+
+                            <!-- Dot -->
+                            <div class="w-2 h-2 bg-gray-300 rounded-full absolute left-1/2 -translate-x-1/2 top-3"></div>
+
+                            <p class="text-sm text-gray-600 mt-4">Barrier</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex-1 text-center relative">
+                            <div class="h-2 bg-gray-300 rounded-full mb-4"></div>
+
+                            <!-- Dot -->
+                            <div class="w-2 h-2 bg-gray-300 rounded-full absolute left-1/2 -translate-x-1/2 top-3"></div>
+
+                            <p class="text-sm text-gray-600 mt-4">Reflection</p>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Overlay when email is clicked -->
-                <div id = "completeOverlay" class = "hidden absolute inset-0 bg-gradient-to-br from-primary to-purple-400 font-inter text-white p-10 rounded-3xl z-50 flex flex-col items-center justify-center text-center">
-                    <h1 class = "text-4xl font-bold mb-20">
-                        TASK COMPLETE
-                    </h1>
-                    <p class = "text-xl mb-20">
-                        You successfully located the contact information.
-                    </p>
+                <div class = "relative" id = "taskWrapper">
+                    <div class="task-container bg-white font-serif p-12 rounded-3xl text-black max-h-[65vh] overflow-y-scroll border border-gray-200 font-inter">
 
-                    <button id = "continueButton" class = "rounded-full bg-white p-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="#2045BA" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-                </div>
+                        <!-- Title -->
+                        <h1 class="text-3xl font-normal mb-2">
+                            JAWS (screen reader)
+                        </h1>
 
-                <!-- Introducing Barrier -->
-                <div id = "introduceBarrier" class = "hidden absolute inset-0 bg-gradient-to-br from-primary to-purple-400 font-inter text-white p-10 rounded-3xl z-50 flex flex-col items-center justify-center text-center">
-                    <h1 class = "text-4xl font-bold mb-20">
-                        THE INTERFACE HAS CHANGED
-                    </h1>
-                    <p class = "text-xl mb-6">
-                        A visual accessibility barrier has now been introduced. 
-                    </p>
+                        <hr class="mb-6 border-gray-300">
 
-                    <p class = "text-xl mb-20">
-                        Please complete the task again under these new conditions.
-                    </p>
+                        <!-- Intro Paragraph -->
+                        <p class="text-base leading-relaxed mb-6">
+                            <span class="font-semibold">JAWS</span> (Job Access With Speech) is a 
+                            <span class="text-blue-600 cursor-pointer hover:underline">screen reader</span> 
+                            computer program for Microsoft Windows that allows blind and visually impaired users 
+                            to read the screen either with a text-to-speech output or by a refreshable Braille display.
+                        </p>
 
-                    <div class = "flex justify-center">
-                        <a href = "barrier.html"
-                            class = "inline-flex gap-3 items-center justify-between bg-primary px-6 py-4 rounded-3xl shadow-lg"
-                        >CONTINUE
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                        </svg>
-                        </a>
+                        <p class="text-base leading-relaxed mb-6">
+                            JAWS is produced by 
+                            <span class="text-blue-600 cursor-pointer hover:underline">Freedom Scientific</span>, 
+                            a company headquartered in the United States.
+                        </p>
+
+                        <!-- History -->
+                        <h2 class="text-2xl font-normal mt-10 mb-2">
+                            History
+                        </h2>
+
+                        <hr class="mb-4 border-gray-300">
+
+                        <p class="text-base leading-relaxed mb-6">
+                            JAWS was originally released in 1989 by Henter-Joyce. It became one of the most widely used 
+                            screen readers in the world. Over time, it expanded to support web browsing, office software, 
+                            and other digital interfaces.
+                        </p>
+
+                        <!-- Features -->
+                        <h2 class="text-2xl font-normal mt-10 mb-2">
+                            Features
+                        </h2>
+
+                        <hr class="mb-4 border-gray-300">
+
+                        <p class="text-base leading-relaxed mb-4">
+                            JAWS provides speech and Braille output for most Windows applications. It allows users to:
+                        </p>
+
+                        <ul class="list-disc list-inside text-base mb-6">
+                            <li>Navigate web pages using keyboard shortcuts</li>
+                            <li>Read documents and emails</li>
+                            <li>Access menus and dialog boxes</li>
+                        </ul>
+
+                        <p class="text-base leading-relaxed mb-6">
+                            Users can stop speech output at any time by pressing the 
+                            <span id="correctAnswer" class="text-blue-600 cursor-pointer hover:underline font-semibold">
+                                Control key
+                            </span>.
+                        </p>
+
+                        <!-- Compatibility -->
+                        <h2 class="text-2xl font-normal mt-10 mb-2">
+                            Compatibility
+                        </h2>
+
+                        <hr class="mb-4 border-gray-300">
+
+                        <p class="text-base leading-relaxed mb-6">
+                            JAWS works with Microsoft Office, web browsers, and many other applications. 
+                            It integrates with accessibility APIs provided by Windows.
+                        </p>
+
+                    </div>
+
+                    <!-- Overlay -->
+                    <div id="completeOverlay"
+                        class="hidden absolute inset-0 bg-gradient-to-br from-primary to-purple-500 
+                                text-white rounded-3xl p-16 z-50 flex flex-col">
+
+                        <!-- Content -->
+                        <div class="max-w-4xl">
+
+                            <h1 class="text-2xl font-bold mb-4">
+                                Task complete!
+                            </h1>
+
+                            <p class="text-base mb-10">
+                                You have successfully identified the answer.
+                            </p>
+
+                            <h2 class="text-2xl font-bold mb-4">
+                                Now the interface will change
+                            </h2>
+
+                            <p class="text-base mb-10">
+                                A <span class="font-semibold">visual accessibility barrier</span> has now been introduced.
+                            </p>
+
+                            <h2 class="text-2xl font-bold mb-4">
+                                Here is your new task:
+                            </h2>
+
+                            <p class="text-base font-semibold">
+                                Identify who took over after Oppermann was hired by Microsoft.
+                            </p>
+
+                        </div>
+
+                        <!-- Button Row -->
+                        <div class="flex justify-end mt-auto">
+                            <a href="barrier.html"
+                                id="continueButton"
+                                class="bg-white text-primary font-semibold px-8 py-4 
+                                        rounded-full shadow-xl text-base 
+                                        flex items-center gap-3 w-auto">
+
+                                CONTINUE
+
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path fill-rule="evenodd"
+                                        d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
         <script src="../../src/main.js"></script>
     </body>

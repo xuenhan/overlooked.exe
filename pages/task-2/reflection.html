@@ -11,46 +11,46 @@
     <body class = "bg-[#FFFFFF]">
         <div class="flex min-h-screen">
             <!-- Sidebar -->
-            <aside class="w-56 bg-primary text-white p-6 flex flex-col relative">
-                <button class="absolute top-6 left-8 text-white text-3xl">
-                    ✕
-                </button>
+            <aside class="w-60 bg-primary text-white p-4 flex flex-col relative">
+        <button class="absolute top-6 left-6 text-white text-3xl">✕</button>
 
-                <nav class="flex flex-col mt-14">
+        <nav class="flex flex-col mt-20">
+          <a
+            href="../main-experience.html"
+            class="flex items-center gap-3 py-2 px-2 text-md font-manrope"
+          >
+            <span class="text-xl font-semibold font-manrope">0</span>
+            <span>Homepage</span>
+          </a>
 
-                    <a href="../main-experience.html"
-                        class="flex items-center gap-3 py-3 px-3 text-sm font-manrope">
-                        <span class="text-sm font-semibold font-manrope">0</span>
-                        <span>Homepage</span>
-                    </a>
+          <hr class="border-white/40 my-3" />
 
-                    <hr class="border-white/40 my-3">
+          <a
+            href="../task-1/tutorial.html"
+            class="flex items-center gap-3 py-2 px-2 text-md font-manrope"
+          >
+            <span class="text-xl font-semibold font-manrope">1</span>
+            <span>Finding Information</span>
+          </a>
 
-                    <a href="#"
-                    class="flex items-center gap-3 py-3 px-3 rounded-xl bg-white text-primary text-sm font-semibold">
+          <hr class="border-white/40 my-3" />
 
-                        <span class="text-sm font-semibold font-manrope">1</span>
-                        <span>Finding Information</span>
-                    </a>
+          <a
+            href="#"
+            class="flex items-center gap-3 py-2 px-2 rounded-xl bg-white text-primary text-md font-semibold"
+          >
+            <span class="text-xl font-bold font-manrope">2</span>
+            <span>Navigating A Menu</span>
+          </a>
 
-                    <hr class="border-white/40 my-3">
-
-                    <a href="../task-2/tutorial.html"
-                    class="flex items-center gap-3 py-3 px-3 text-sm font-manrope">
-
-                        <span class="text-sm font-bold font-manrope">2</span>
-                        <span>Navigating A Menu</span>
-                    </a>
-
-                    <hr class="border-white/40 my-3">
-
-                </nav>
-            </aside>
+          <hr class="border-white/40 my-3" />
+        </nav>
+      </aside>
             <main class="flex-1 pt-10 px-20">
                 <!-- Top Header -->
                 <div class="mb-10">
                     <h1 class="text-2xl font-semibold text-secondary mb-6">
-                        Task 1: Finding Information
+                        Reflection: Navigating a Menu
                     </h1>
 
                     <!-- Progress Bar -->
@@ -102,68 +102,67 @@
 
                 <div class = "relative" id = "taskWrapper">
                     <!-- Task background -->
-                    <div class="task-container bg-white font-inter text-gray-800">
+                    <div class="task-container bg-white font-inter text-[#404040]">
 
-                        <h1 class="text-5xl font-bold mb-10">
+                        <h1 class="text-5xl font-bold mb-10 font-manrope">
                             Reflection
                         </h1>
 
-                        <h2 class="text-lg font-semibold mb-2">
+                        <h2 class="text-lg font-semibold mb-2 font-manrope">
                             What You Did:
                         </h2>
                         <p class="mb-10">
-                            You identified information under two different visual conditions.
+                            In this task, you navigated a menu under two different motor conditions. First, you used site’s main navigation to locate the Account Settings page. Then, you navigated another menu to find the notification settings page, and once there, adjusted your preferences by turning off all notifications.
                         </p>
 
-                        <h2 class="text-lg font-semibold mb-2">
+                        <h2 class="text-lg font-semibold mb-2 font-manrope">
                             What Changed?
                         </h2>
                         <p class="mb-8 max-w-4xl">
-                            The structure and content of the page remained the same. Only the visual presentation was altered.
-                        </p>
+                            The first time, you could do as you might normally- using a mouse or trackpad to navigate to different sections by moving a cursor and clicking. In the barrier version however, while the interface remained the same, mouse interaction was disabled, requiring keyboard-only navigation. 
 
                         <table class="w-full border border-gray-300 mb-12">
                             <thead class="bg-gray-200">
                                 <tr>
-                                    <th class="p-4 text-left border-r border-gray-300">
+                                    <th class="p-4 border-r border-gray-300 text-center">
                                         Baseline Experience
                                     </th>
-                                    <th class="p-4 text-left">
+                                    <th class="p-4 text-center">
                                         Barrier Experience
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-300">
+                            <tbody class="divide-y divide-gray-300 text-center">
                                 <tr>
                                     <td class="p-4 border-r border-gray-300">
-                                        Clear headings with strong visual hierarchy
+                                        Mouse and keyboard both functional
                                     </td>
                                     <td class="p-4">
-                                        No headers
+                                        Mouse disabled; keyboard-only required
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 border-r border-gray-300">
-                                        High color contrast
+                                        Clear indicators of hover/cursor placement
                                     </td>
                                     <td class="p-4">
-                                        Low color contrast (harder to read text)
+                                        Faint or hard-to-track focus indicator
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 border-r border-gray-300">
-                                        Important text colored and underlined
+                                        Quick toggle interaction
                                     </td>
                                     <td class="p-4">
-                                        Important text blends into surrounding text
+                                        Difficult to confirm which toggle is selected
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="p-4 border-r border-gray-300">
-                                        Easy to scan and locate information
+                                        Confident in actions to navigate and select
                                     </td>
                                     <td class="p-4">
-                                        Requires effort to scan and locate information
+                                        Uncertainty about what is currently active
                                     </td>
                                 </tr>
                             </tbody>
@@ -188,11 +187,11 @@
 
                                 <!-- Content -->
                                 <ul class="space-y-4 text-base">
-                                    <li>Users with low vision</li>
-                                    <li>Users with visual processing difficulties</li>
-                                    <li>Users experiencing eye strain or fatigue</li>
-                                    <li>Users viewing content on small screens</li>
-                                    <li>Anyone in low-light or glare conditions</li>
+                                    <li>Users with motor impairments who rely on keyboards or switch devices</li>
+                                    <li>Users with limited hand mobility</li>
+                                    <li>Users with temporary injuries</li>
+                                    <li>Screen reader users who depend on structured keyboard navigations</li>
+                                    <li>Anyone who prefers keyboard shortcuts over mouse input</li>
                                 </ul>
 
                             </div>
@@ -218,10 +217,10 @@
 
                                 <!-- Content -->
                                 <ul class="space-y-4 text-base">
-                                    <li>Did it take longer to find the information the second time?</li>
-                                    <li>Did you reread sections more carefully?</li>
-                                    <li>Did you feel less confident in your selection?</li>
-                                    <li>Did the page feel more overwhelming or cluttered?</li>
+                                    <li>Did you ever lose track of where your focus was?</li>
+                                    <li>Did you accidentally skip over menu items or toggles?</li>
+                                    <li>Did turning off notifications take longer than expected?</li>
+                                    <li>Did the interface look "normal" but feel harder to control?</li>
                                 </ul>
 
                             </div>
@@ -239,21 +238,20 @@
 
                             <div class="space-y-6 text-lg text-gray-700">
 
-                                <p class="font-semibold">
-                                    Access to information is shaped by design decisions.
-                                    <br>
-                                    <span class = "font-normal">The information didn’t change — only its presentation did.</span>
+                                <p class="font-normal">
+                                    Navigation and settings management are
+                                    <span class = "font-semibold">core interactions in almost every digital product. </span>
                                 </p>
 
                                 <p>
-                                    By reducing contrast, hierarchy, and clarity, the task became more difficult.
-                                    This demonstrates how accessibility barriers are often created through design
-                                    choices, not missing content.
+                                    If menus are not fully <span class = "font-semibold">keyboard-accessible,</span> or if
+                                    <span class = "font-semibold">focus states</span> are unclear, users who rely on alternative input methods may struggle to complete even simple tasks.
                                 </p>
 
                                 <p>
-                                    Small visual decisions can determine whether someone can access information
-                                    independently, or at all.
+                                    Accessibility <span class = "font-semibold">isn’t just about content</span> —it’s about ensuring that every interaction works 
+                                    <span class = "font-semibold">reliably</span> and <span class = "font-semibold">predictably</span>. When navigation isn’t accessible, users’ ability to use websites
+                                    <span class = "font-semibold">independently</span> breaks down with it.
                                 </p>
                             </div>
                         </div>

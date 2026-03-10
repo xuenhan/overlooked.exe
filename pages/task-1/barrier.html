@@ -6,26 +6,44 @@
         <title>Overlooked.exe</title>
 
         <!--Script to import tailwind css-->
-       <link href="../../dist/output.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <link href="../../dist/output.css" rel="stylesheet">
     </head>
     <body class = "bg-[#FFFFFF]">
         <div class="flex min-h-screen">
             <!-- Sidebar -->
-            <aside class="w-48 bg-primary text-white p-6 flex flex-col">
-                <button class="absolute top-4 left-8 text-white text-2xl">
+            <aside class="w-56 bg-primary text-white p-6 flex flex-col relative">
+                <button class="absolute top-6 left-8 text-white text-3xl">
                     ✕
                 </button>
 
-                <nav class="flex flex-col gap-3 pt-20">
+                <nav class="flex flex-col mt-14">
+
                     <a href="../main-experience.html"
-                    class="px-4 py-2 rounded-lg hover:bg-white hover:text-primary transition">
-                        Homepage
+                        class="flex items-center gap-3 py-3 px-3 text-sm font-manrope">
+                        <span class="text-sm font-semibold font-manrope">0</span>
+                        <span>Homepage</span>
                     </a>
 
-                    <a href="task-1/tutorial.html"
-                    class="bg-white text-primary px-4 py-2 rounded-lg font-semibold">
-                        Task 1
+                    <hr class="border-white/40 my-3">
+
+                    <a href="#"
+                    class="flex items-center gap-3 py-3 px-3 rounded-xl bg-white text-primary text-sm font-semibold">
+
+                        <span class="text-sm font-semibold font-manrope">1</span>
+                        <span>Finding Information</span>
                     </a>
+
+                    <hr class="border-white/40 my-3">
+
+                    <a href="../task-2/tutorial.html"
+                    class="flex items-center gap-3 py-3 px-3 text-sm font-manrope">
+
+                        <span class="text-sm font-bold font-manrope">2</span>
+                        <span>Navigating A Menu</span>
+                    </a>
+
+                    <hr class="border-white/40 my-3">
 
                 </nav>
             </aside>

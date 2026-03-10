@@ -68,9 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // block mouse clicks
     document.addEventListener("click", (e) => {
 
+      const sidebar = document.querySelector("aside");
       if (overlay && !overlay.classList.contains("hidden") && overlay.contains(e.target)) {
-        return;
-      }
+    return;
+  }
+
+  if (sidebar && sidebar.contains(e.target)) {
+    return;
+  }
 
       e.preventDefault();
       e.stopPropagation();

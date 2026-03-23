@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlooked.exe</title>
+
+    <!--Script to import tailwind css-->
+    <link href="../../dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FFFFFF]">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-50 bg-primary text-white p-4 flex flex-col relative">
+        <a
+          href="https://overlooked-exe.carrd.co"
+          class="absolute top-6 left-6 text-white text-3xl"
+        >
+          ✕
+        </a>
+
+        <nav class="flex flex-col mt-16">
+          <a
+            href="../main-experience.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">0</span>
+            <span>Homepage</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-1/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">1</span>
+            <span>Finding Information</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-2/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">2</span>
+            <span>Navigating A Menu</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="#"
+            class="flex items-center gap-3 py-2 px-4 rounded-md bg-white text-primary text-sm font-semibold font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">3</span>
+            <span>Submitting a Form</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+        </nav>
+      </aside>
+      <main class="flex-1 pt-10 px-20 pb-6">
+        <!-- Top Header -->
+        <div class="mb-10">
+          <h1 class="text-2xl font-semibold text-secondary mb-6 font-inter">
+            Your Task: Fill out the required fields completely, then click
+            <span class="text-primary">‘Create Account’</span>
+          </h1>
+
+          <!-- Progress Bar -->
+          <div class="flex items-start gap-4 mb-4">
+            <!-- Step 1 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Tutorial</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Task</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-[#D0E2FF] rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-[#D0E2FF] rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Barrier</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-[#D0E2FF] rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-[#D0E2FF] rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Reflection</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div class="border border-gray-500 bg-white relative p-16">
+          <div id="step1">
+            <h1 class="text-5xl font-bold text-[#404040] mb-6 font-manrope">
+              Create an Account
+            </h1>
+
+            <p class="text-[#404040] mb-10">Enter your first and last name</p>
+
+            <!-- First Name -->
+            <div class="mb-10">
+              <label class="block text-[#404040] mb-2">First name</label>
+              <input
+                id="firstName"
+                type="text"
+                class="w-1/2 border border-gray-400 px-4 py-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              />
+              <div
+                id="firstNameError"
+                class="flex items-center gap-3 mt-3 text-[#B30000] hidden"
+              >
+                <div
+                  class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+                >
+                  !
+                </div>
+                <p class="text-sm">First name is required</p>
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-12">
+              <label class="block text-[#404040] mb-2">
+                Last name (optional)
+              </label>
+              <input
+                type="text"
+                class="w-1/2 border border-gray-400 px-4 py-3 outline-none focus:ring-1 focus:ring-primary focus:border-primary transition"
+              />
+            </div>
+
+            <!-- Next Button -->
+            <div class="flex justify-end">
+              <button
+                id="nextBtn"
+                class="bg-primary text-white px-8 py-3 rounded-full"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div id="step2" class="hidden">
+            <h1 class="text-5xl font-bold text-[#404040] mb-6 font-manrope">
+              Basic information
+            </h1>
+
+            <p class="text-[#404040] mb-10">
+              Enter your date of birth and select your gender
+            </p>
+
+            <!-- DOB -->
+            <div class="flex flex-col md:flex-row gap-6 mb-2">
+              <!-- Month -->
+              <div class="flex-1">
+                <label class="block mb-2 text-[#404040]">Month</label>
+                <div class="relative">
+                  <select
+                    class="border border-gray-400 px-4 py-3 w-full appearance-none bg-white pr-10"
+                  >
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M5 7l5 6 5-6H5z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day -->
+              <div class="w-full md:w-32">
+                <label class="block mb-2 text-[#404040]">Day</label>
+                <input
+                    id="dayInput"
+                  type="text"
+                  class="border border-gray-400 px-4 py-3 w-full"
+                />
+              </div>
+
+              <!-- Year -->
+              <div class="w-full md:w-40">
+                <label class="block mb-2 text-[#404040]">Year</label>
+                <input
+                  id="yearInput"
+                  type="text"
+                  class="border border-gray-400 px-4 py-3 w-full"
+                />
+              </div>
+            </div>
+
+            <!-- DOB ERROR -->
+            <div
+              id="dobError"
+              class="flex items-center gap-3 mt-2 text-[#B30000] hidden"
+            >
+              <div
+                class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+              >
+                !
+              </div>
+              <p class="text-sm">Please fill in a complete birthday</p>
+            </div>
+
+            <!-- Gender -->
+            <div class="mt-8">
+              <label class="block mb-2 text-[#404040]">Gender</label>
+              <div class="relative">
+                <select
+                  id="genderSelect"
+                  class="border border-gray-400 px-4 py-3 w-full appearance-none bg-white pr-10"
+                >
+                  <option value="">Select</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
+                >
+                  <svg
+                    class="w-6 h-6 text-gray-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M5 7l5 6 5-6H5z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gender ERROR -->
+            <div
+              id="genderError"
+              class="flex items-center gap-3 mt-2 text-[#B30000] hidden"
+            >
+              <div
+                class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+              >
+                !
+              </div>
+              <p class="text-sm">Please select your gender</p>
+            </div>
+
+            <!-- Button -->
+            <div class="flex justify-end mt-12">
+              <button id="nextBtnStep2" class="bg-primary text-white px-8 py-3 rounded-full">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../../src/main.js"></script>
+  </body>
+</html>

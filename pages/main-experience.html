@@ -11,8 +11,10 @@
   <body class="bg-[#FFFFFF]">
     <div class="flex min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-50 bg-primary text-white p-4 flex flex-col relative">
-        <button class="absolute top-6 left-6 text-white text-3xl">✕</button>
+      <aside class="w-50 bg-primary text-white p-4 flex flex-col sticky top-0 h-screen">
+        <a href="https://overlooked-exe.carrd.co" class="absolute top-6 left-6 text-white text-3xl">
+          ✕
+        </a>
 
         <nav class="flex flex-col mt-16">
           <a
@@ -40,7 +42,17 @@
             class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
           >
             <span class="text-sm font-bold font-manrope">2</span>
-            <span>Navigating A Menu</span>
+            <span>Navigating a Menu</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+          
+          <a
+            href="task-3/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">3</span>
+            <span>Submitting a Form</span>
           </a>
 
           <hr class="border-white/40 my-2 mx-2" />
@@ -118,7 +130,7 @@
         </p>
 
         <!-- Task grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-10">
           <!-- Card 1 -->
           <div
             class="bg-gradient-to-br from-primary to-purple-400 text-white p-8 rounded-3xl flex flex-col"
@@ -196,26 +208,43 @@
 
           <!-- Card 3 -->
           <div
-            class="bg-gray-300 text-gray-600 rounded-3xl flex items-center justify-center min-h-[220px]"
+            class="bg-gradient-to-br from-primary to-purple-400 text-white p-8 rounded-3xl flex flex-col"
           >
-            <h3 class="text-xl font-semibold">Coming Soon</h3>
-          </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4 font-manrope">
+                Task 3: <br />Submitting a Form
+              </h3>
 
+              <p class="text-base mb-6">
+                Successfully fill out a simple form to create a user account.
+              </p>
+
+              <p class="text-lg font-semibold">Estimated completion time:</p>
+
+              <p class="text-base mb-6">4-6 minutes</p>
+            </div>
+
+            <!-- Button -->
+            <a
+              href="task-3/tutorial.html"
+              class="mt-auto inline-flex gap-3 items-center justify-between bg-primary px-6 py-4 rounded-3xl shadow-lg"
+            >
+              START TASK 03
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
           <!-- Card 4 -->
-          <div
-            class="bg-gray-300 text-gray-600 rounded-3xl flex items-center justify-center min-h-[220px]"
-          >
-            <h3 class="text-xl font-semibold">Coming Soon</h3>
-          </div>
-
-          <!-- Card 5 -->
-          <div
-            class="bg-gray-300 text-gray-600 rounded-3xl flex items-center justify-center min-h-[220px]"
-          >
-            <h3 class="text-xl font-semibold">Coming Soon</h3>
-          </div>
-
-          <!-- Card 6 -->
           <div
             class="bg-gray-300 text-gray-600 rounded-3xl flex items-center justify-center min-h-[220px]"
           >

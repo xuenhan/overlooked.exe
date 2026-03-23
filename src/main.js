@@ -16,34 +16,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const profileBtn = document.getElementById("profileBtn");
   const profileMenu = document.getElementById("profileMenu");
 
-  profileBtn.addEventListener("click", () => {
-    profileMenu.classList.toggle("hidden");
-  });
+  if (profileBtn && profileMenu) {
+    profileBtn.addEventListener("click", () => {
+      profileMenu.classList.toggle("hidden");
+    });
+  }
 
   // Settings button
   const settingsBtn = document.getElementById("settingsBtn");
   const profilePage = document.getElementById("profilePage");
   const settingsPage = document.getElementById("settingsPage");
 
+  if (settingsBtn && profilePage && settingsPage) {
   settingsBtn.addEventListener("click", () => {
     profilePage.classList.add("hidden");
     settingsPage.classList.remove("hidden");
     profileMenu.classList.add("hidden");
   });
+}
 
   // Notifications page
   const notificationsBtn = document.getElementById("notificationsBtn");
   const settingsPrivacyPage = document.getElementById("settingsPrivacyPage");
   const notificationsPanel = document.getElementById("notificationsPanel");
 
-  notificationsBtn.addEventListener("click", () => {
+  if (notificationsBtn && settingsPrivacyPage && notificationsPanel) {
+    notificationsBtn.addEventListener("click", () => {
     settingsPrivacyPage.classList.add("hidden");
     notificationsPanel.classList.remove("hidden");
   });
+  }
+  
 
-  // Notification toggles
-  const toggles = document.querySelectorAll(".notifToggle");
+const toggles = document.querySelectorAll(".notifToggle");
 
+if (toggles.length > 0) {
   toggles.forEach((toggle) => {
     toggle.addEventListener("change", () => {
       const allOff = [...toggles].every((t) => !t.checked);
@@ -53,9 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
+}
 
-document.addEventListener("DOMContentLoaded", () => {
   if (document.body.id === "barrierPage") {
     const overlay = document.getElementById("completeOverlay");
 
@@ -133,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  
   const firstNameInput = document.getElementById("firstName");
   const errorText = document.getElementById("firstNameError");
   const nextBtn = document.getElementById("nextBtn");
@@ -152,39 +157,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtnStep2 = document.getElementById("nextBtnStep2");
 
   function validateDOB() {
-  const day = dayInput.value.trim();
-  const year = yearInput.value.trim();
+    const day = dayInput.value.trim();
+    const year = yearInput.value.trim();
 
-  const isDayValid = /^\d+$/.test(day);
-  const isYearValid = /^\d+$/.test(year);
+    const isDayValid = /^\d+$/.test(day);
+    const isYearValid = /^\d+$/.test(year);
 
-  // reset styles first
-  dayInput.classList.remove("border-2", "border-[#B30000]");
-  yearInput.classList.remove("border-2", "border-[#B30000]");
+    // reset styles first
+    dayInput.classList.remove("border-2", "border-[#B30000]");
+    yearInput.classList.remove("border-2", "border-[#B30000]");
 
-  dayInput.classList.add("border-gray-400");
-  yearInput.classList.add("border-gray-400");
+    dayInput.classList.add("border-gray-400");
+    yearInput.classList.add("border-gray-400");
 
-  // ❌ if both valid
-  if (day !== "" && year !== "" && isDayValid && isYearValid) {
-    dayError.classList.add("hidden");
-    return;
+    // ❌ if both valid
+    if (day !== "" && year !== "" && isDayValid && isYearValid) {
+      dayError.classList.add("hidden");
+      return;
+    }
+
+    // ❌ otherwise show error
+    dayError.classList.remove("hidden");
+
+    // highlight ONLY the wrong ones
+    if (day === "" || !isDayValid) {
+      dayInput.classList.remove("border-gray-400");
+      dayInput.classList.add("border-2", "border-[#B30000]");
+    }
+
+    if (year === "" || !isYearValid) {
+      yearInput.classList.remove("border-gray-400");
+      yearInput.classList.add("border-2", "border-[#B30000]");
+    }
   }
-
-  // ❌ otherwise show error
-  dayError.classList.remove("hidden");
-
-  // highlight ONLY the wrong ones
-  if (day === "" || !isDayValid) {
-    dayInput.classList.remove("border-gray-400");
-    dayInput.classList.add("border-2", "border-[#B30000]");
-  }
-
-  if (year === "" || !isYearValid) {
-    yearInput.classList.remove("border-gray-400");
-    yearInput.classList.add("border-2", "border-[#B30000]");
-  }
-}
 
   dayInput.addEventListener("input", validateDOB);
   yearInput.addEventListener("input", validateDOB);
@@ -240,50 +245,152 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   nextBtnStep2.addEventListener("click", () => {
+    let hasError = false;
 
+    // ❌ YEAR VALIDATION
+    if (dayInput.value.trim() === "" || yearInput.value.trim() === "") {
+      hasError = true;
+
+      dayError.classList.remove("hidden");
+
+      dayInput.classList.add("border-2", "border-[#B30000]");
+      yearInput.classList.add("border-2", "border-[#B30000]");
+    }
+
+    // ❌ GENDER VALIDATION
+    if (genderSelect.value === "") {
+      hasError = true;
+
+      genderError.classList.remove("hidden");
+
+      genderSelect.classList.remove("border-gray-400");
+      genderSelect.classList.add("border-2", "border-[#B30000]");
+    } else {
+      genderError.classList.add("hidden");
+
+      genderSelect.classList.remove("border-2", "border-[#B30000]");
+      genderSelect.classList.add("border-gray-400");
+    }
+
+    // ✅ If no errors → proceed
+    if (!hasError) {
+      step2.classList.add("hidden");
+      step3.classList.remove("hidden");
+    }
+  });
+  genderSelect.addEventListener("change", () => {
+    if (genderSelect.value !== "") {
+      // ✅ valid → remove error
+      genderError.classList.add("hidden");
+
+      genderSelect.classList.remove("border-2", "border-[#B30000]");
+      genderSelect.classList.add("border-gray-400");
+    }
+  });
+
+  const passwordInput = document.getElementById("passwordInput");
+
+  const ruleLength = document.getElementById("ruleLength");
+  const ruleUpper = document.getElementById("ruleUpper");
+  const ruleLower = document.getElementById("ruleLower");
+  const ruleNumber = document.getElementById("ruleNumber");
+  const ruleSpecial = document.getElementById("ruleSpecial");
+
+  function updateRule(el, condition) {
+    const icon = el.querySelector(".icon");
+
+    if (condition) {
+      // ✅ valid → green + checks
+      icon.classList.remove("bg-[#B30000]");
+      icon.classList.add("bg-[#008A25]");
+
+      icon.innerHTML = `
+    <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="3">
+      <path d="M5 10l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
+    } else {
+      // ❌ invalid → red + cross
+      icon.classList.remove("bg-[#008A25]");
+      icon.classList.add("bg-[#B30000]");
+
+      icon.textContent = "✗";
+    }
+  }
+
+  passwordInput.addEventListener("input", () => {
+    console.log("typing password");
+    const val = passwordInput.value;
+
+    updateRule(ruleLength, val.length >= 12);
+    updateRule(ruleUpper, /[A-Z]/.test(val));
+    updateRule(ruleLower, /[a-z]/.test(val));
+    updateRule(ruleNumber, /\d/.test(val));
+    updateRule(ruleSpecial, /[!#%,*]/.test(val));
+  });
+
+  const showPassword = document.getElementById("showPassword");
+
+  if (showPassword && passwordInput) {
+    showPassword.addEventListener("change", () => {
+      passwordInput.type = showPassword.checked ? "text" : "password";
+    });
+  }
+
+  const createBtn = document.getElementById("createBtn");
+const passwordError = document.getElementById("passwordError");
+
+createBtn.addEventListener("click", () => {
   let hasError = false;
 
-  // ❌ YEAR VALIDATION
-  if (
-  dayInput.value.trim() === "" ||
-  yearInput.value.trim() === ""
-) {
-  hasError = true;
+  const val = passwordInput.value;
 
-  dayError.classList.remove("hidden");
+  const isValid =
+    val.length >= 12 &&
+    /[A-Z]/.test(val) &&
+    /[a-z]/.test(val) &&
+    /\d/.test(val) &&
+    /[!#%,*]/.test(val);
 
-  dayInput.classList.add("border-2", "border-[#B30000]");
-  yearInput.classList.add("border-2", "border-[#B30000]");
-}
-
-  // ❌ GENDER VALIDATION
-  if (genderSelect.value === "") {
+  if (!isValid) {
     hasError = true;
 
-    genderError.classList.remove("hidden");
+    // ❌ show error text
+    passwordError.classList.remove("hidden");
 
-    genderSelect.classList.remove("border-gray-400");
-    genderSelect.classList.add("border-2", "border-[#B30000]");
+    // ❌ red border
+    passwordInput.classList.remove("border-gray-400");
+    passwordInput.classList.add("border-2", "border-[#B30000]");
   } else {
-    genderError.classList.add("hidden");
+    // ✅ remove error
+    passwordError.classList.add("hidden");
 
-    genderSelect.classList.remove("border-2", "border-[#B30000]");
-    genderSelect.classList.add("border-gray-400");
+    passwordInput.classList.remove("border-2", "border-[#B30000]");
+    passwordInput.classList.add("border-gray-400");
   }
 
-  // ✅ If no errors → proceed
   if (!hasError) {
-    console.log("Step 2 valid");
-    // 👉 move to next page / overlay / next step
+    console.log("Form complete ✅");
+    step3.classList.add("hidden");
+    step4.classList.remove("hidden");
   }
 });
-genderSelect.addEventListener("change", () => {
-  if (genderSelect.value !== "") {
-    // ✅ valid → remove error
-    genderError.classList.add("hidden");
 
-    genderSelect.classList.remove("border-2", "border-[#B30000]");
-    genderSelect.classList.add("border-gray-400");
+const createAccountBtn = document.getElementById("createAccountBtn");
+const termsCheckbox = document.getElementById("termsCheckbox");
+const termsError = document.getElementById("termsError");
+
+createAccountBtn.addEventListener("click", () => {
+  if (!termsCheckbox.checked) {
+    // ❌ show error
+    termsError.classList.remove("hidden");
+    return;
   }
+
+  // ✅ remove error
+  termsError.classList.add("hidden");
+
+  console.log("Account successfully created 🎉");
 });
+
 });

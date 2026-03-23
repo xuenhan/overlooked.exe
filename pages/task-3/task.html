@@ -11,7 +11,9 @@
   <body class="bg-[#FFFFFF]">
     <div class="flex min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-50 bg-primary text-white p-4 flex flex-col relative">
+      <aside
+        class="w-50 bg-primary text-white p-4 flex flex-col sticky top-0 h-screen"
+      >
         <a
           href="https://overlooked-exe.carrd.co"
           class="absolute top-6 left-6 text-white text-3xl"
@@ -222,7 +224,7 @@
               <div class="w-full md:w-32">
                 <label class="block mb-2 text-[#404040]">Day</label>
                 <input
-                    id="dayInput"
+                  id="dayInput"
                   type="text"
                   class="border border-gray-400 px-4 py-3 w-full"
                 />
@@ -293,8 +295,246 @@
 
             <!-- Button -->
             <div class="flex justify-end mt-12">
-              <button id="nextBtnStep2" class="bg-primary text-white px-8 py-3 rounded-full">
+              <button
+                id="nextBtnStep2"
+                class="bg-primary text-white px-8 py-3 rounded-full"
+              >
                 Next
+              </button>
+            </div>
+          </div>
+
+          <div id="step3" class="hidden">
+            <h1 class="text-5xl font-bold text-[#404040] mb-6 font-manrope">
+              Account information
+            </h1>
+
+            <p class="text-[#404040] mb-10">
+              Create your username and password
+            </p>
+
+            <!-- Username -->
+            <div class="mb-8">
+              <label class="block mb-2 text-[#404040]">Unique username</label>
+              <input
+                id="usernameInput"
+                type="text"
+                class="w-1/2 border border-gray-400 px-4 py-3"
+              />
+            </div>
+
+            <div
+              id="usernameError"
+              class="flex items-center gap-3 mt-3 text-[#B30000] hidden"
+            >
+              <div
+                class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+              >
+                !
+              </div>
+              <p class="text-sm">
+                Username must be at least 4 characters and contain only letters
+                and numbers
+              </p>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4">
+              <label class="block mb-2 text-[#404040]">Password</label>
+              <div class="relative w-1/2">
+                <input
+                  id="passwordInput"
+                  type="password"
+                  class="w-full border border-gray-400 px-4 py-3 pr-20"
+                />
+                <label
+                  class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 text-sm cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    id="showPassword"
+                    class="w-4 h-4 accent-primary"
+                  />
+                  <span>Show</span>
+                </label>
+              </div>
+
+              <div
+                id="passwordError"
+                class="flex items-center gap-3 mt-3 text-[#B30000] hidden"
+              >
+                <div
+                  class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+                >
+                  !
+                </div>
+                <p class="text-sm">Password is missing specific requirements</p>
+              </div>
+            </div>
+
+            <!-- Rules -->
+            <div class="text-sm mt-4 space-y-2">
+              <p class="text-gray-600">A valid password must contain:</p>
+
+              <div
+                id="ruleLength"
+                class="flex items-center gap-2 text-[#404040]"
+              >
+                <span
+                  class="icon w-5 h-5 flex items-center justify-center rounded-full bg-[#B30000] text-white text-xs"
+                >
+                  ✗
+                </span>
+                <span>12 or more characters</span>
+              </div>
+
+              <div
+                id="ruleUpper"
+                class="flex items-center gap-2 text-[#404040]"
+              >
+                <span
+                  class="icon w-5 h-5 flex items-center justify-center rounded-full bg-[#B30000] text-white text-xs"
+                >
+                  ✗
+                </span>
+                <span>At least 1 uppercase digit</span>
+              </div>
+
+              <div
+                id="ruleLower"
+                class="flex items-center gap-2 text-[#404040]"
+              >
+                <span
+                  class="icon w-5 h-5 flex items-center justify-center rounded-full bg-[#B30000] text-white text-xs"
+                >
+                  ✗
+                </span>
+                <span>At least 1 lowercase digit</span>
+              </div>
+
+              <div
+                id="ruleNumber"
+                class="flex items-center gap-2 text-[#404040]"
+              >
+                <span
+                  class="icon w-5 h-5 flex items-center justify-center rounded-full bg-[#B30000] text-white text-xs"
+                >
+                  ✗
+                </span>
+                <span>At least 1 number</span>
+              </div>
+
+              <div
+                id="ruleSpecial"
+                class="flex items-center gap-2 text-[#404040]"
+              >
+                <span
+                  class="icon w-5 h-5 flex items-center justify-center rounded-full bg-[#B30000] text-white text-xs"
+                >
+                  ✗
+                </span>
+                <span>At least 1 special character (! # % , *)</span>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="flex justify-end mt-10">
+              <button
+                id="createBtn"
+                class="bg-primary text-white px-8 py-3 rounded-full"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+
+          <div id="step4" class="hidden">
+            <h1 class="text-5xl font-bold text-[#404040] mb-6 font-manrope">
+              Preferences
+            </h1>
+
+            <p class="text-[#404040] mb-10 font-inter text-lg">
+              Choose your preferences and review the terms
+            </p>
+
+            <!-- Content Preferences -->
+            <div class="mb-8">
+              <p class="font-semibold text-[#404040] mb-4 text-xl font-inter">
+                Content Preferences
+              </p>
+
+              <div class="space-y-3 text-[#404040]">
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="prefCheckbox w-4 h-4 accent-primary"
+                  />
+                  Product updates
+                </label>
+
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="prefCheckbox w-4 h-4 accent-primary"
+                  />
+                  Promotions and offers
+                </label>
+
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="prefCheckbox w-4 h-4 accent-primary"
+                  />
+                  News and announcements
+                </label>
+
+                <label class="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    class="prefCheckbox w-4 h-4 accent-primary"
+                  />
+                  Tips and tutorials
+                </label>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="mt-6">
+              <label class="flex items-start gap-3 text-[#404040]">
+                <input
+                  type="checkbox"
+                  id="termsCheckbox"
+                  class="w-4 h-4 mt-1 accent-primary"
+                />
+                <span>
+                  By selecting “Create Account”, you are confirming that you
+                  have read and agree to the <span class = "underline">Terms of Use and Privacy Policy</span>.
+                </span>
+              </label>
+            </div>
+
+            <!-- Error -->
+            <div
+              id="termsError"
+              class="flex items-center gap-3 mt-4 text-[#B30000] hidden"
+            >
+              <div
+                class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+              >
+                !
+              </div>
+              <p class="text-sm">
+                You have not agreed to the Terms and Conditions
+              </p>
+            </div>
+
+            <!-- Button -->
+            <div class="flex justify-end mt-10">
+              <button
+                id="createAccountBtn"
+                class="bg-primary text-white px-8 py-3 rounded-full"
+              >
+                Create Account
               </button>
             </div>
           </div>

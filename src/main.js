@@ -434,3 +434,22 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Account successfully created 🎉");
   });
 });
+
+function openProduct() {
+  document.getElementById("homePage").classList.add("hidden");
+  document.getElementById("productPage").classList.remove("hidden");
+}
+
+function goToCart() {
+  document.getElementById("productPage").classList.add("hidden");
+  document.getElementById("cartPage").classList.remove("hidden");
+}
+
+function completeTask() {
+  document.getElementById("cartPage").classList.add("hidden");
+  document.getElementById("completeOverlay").classList.remove("hidden");
+  const container = document.getElementById("taskContainer");
+
+  container.classList.remove("border", "border-gray-500", "bg-white");
+  document.getElementById("topBar").classList.add("hidden");
+}

@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlooked.exe</title>
+
+    <!--Script to import tailwind css-->
+    <link href="../../dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FFFFFF]">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="w-50 bg-primary text-white p-4 flex flex-col sticky top-0 h-screen"
+      >
+        <a
+          href="https://overlooked-exe.carrd.co"
+          class="absolute top-6 left-6 text-white text-3xl"
+        >
+          ✕
+        </a>
+
+        <nav class="flex flex-col mt-16">
+          <a
+            href="../main-experience.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">0</span>
+            <span>Homepage</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-1/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">1</span>
+            <span>Finding Information</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-2/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">2</span>
+            <span>Navigating A Menu</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-3/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">3</span>
+            <span>Submitting a Form</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="#"
+            class="flex items-center gap-3 py-2 px-4 rounded-md bg-white text-primary text-sm font-semibold font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">4</span>
+            <span>Understanding Next Steps</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+        </nav>
+      </aside>
+      <main class="flex-1 pt-10 px-20 pb-6">
+        <!-- Top Header -->
+        <div class="mb-10">
+          <h1 class="text-2xl font-semibold text-secondary mb-6 font-inter">
+            Your Task: Find
+            <span class="text-primary">‘Air Fryer’</span>, add to cart and
+            checkout.
+          </h1>
+
+          <!-- Progress Bar -->
+          <div class="flex items-start gap-4 mb-4">
+            <!-- Step 1 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Tutorial</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Task</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-[#D0E2FF] rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-[#D0E2FF] rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Barrier</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-[#D0E2FF] rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-[#D0E2FF] rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Reflection</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div
+          id = "taskContainer"
+          class="border border-gray-500 bg-white relative h-[600px] overflow-y-scroll flex flex-col"
+        >
+          <!-- Top Bar -->
+          <div 
+            id = "topBar"
+            class="bg-[#232F3E] text-white px-6 py-3 flex items-center gap-6"
+          >
+            <div class="text-xl font-bold">amazon.ca</div>
+
+            <input
+              type="text"
+              placeholder="Search"
+              class="flex-1 px-4 py-2 text-black rounded-md"
+            />
+
+            <div class="text-sm">Returns & Orders</div>
+            <div class="text-sm">Account & Lists</div>
+            <div class="text-sm">Cart</div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto">
+            <div id="homePage">
+              <!-- Hero -->
+              <div class="h-40 bg-gray-300 flex items-center justify-center">
+                <div class="w-20 h-16 bg-gray-400"></div>
+              </div>
+
+              <!-- Product Section -->
+              <div class="p-6 space-y-10">
+                <!-- Electronics -->
+                <div>
+                  <h2 class="text-lg font-semibold mb-4">
+                    Shop deals in Electronics
+                  </h2>
+                  <div class="grid grid-cols-4 gap-4">
+                    <!-- CLICKABLE ITEM -->
+                    <div
+                      onclick="addToCart('USB-C Hub')"
+                      class="cursor-pointer bg-white p-4 border rounded-md text-center hover:shadow-lg"
+                    >
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm font-semibold">USB-C Hub</p>
+                      <p class="text-xs text-gray-500">$22.99</p>
+                    </div>
+
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Headphones</p>
+                      <p class="text-xs text-gray-500">$49.99</p>
+                    </div>
+
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Laptop Stand</p>
+                      <p class="text-xs text-gray-500">$34.99</p>
+                    </div>
+
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Phone Case</p>
+                      <p class="text-xs text-gray-500">$12.99</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Home -->
+                <div>
+                  <h2 class="text-lg font-semibold mb-4">Home & Kitchen</h2>
+                  <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Blender</p>
+                      <p class="text-xs text-gray-500">$89.99</p>
+                    </div>
+                    <div
+                      onclick="openProduct()"
+                      class="cursor-pointer bg-white p-4 border rounded-md text-center hover:shadow-lg"
+                    >
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Air Fryer</p>
+                      <p class="text-xs text-gray-500">$129.99</p>
+                    </div>
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Rice Cooker</p>
+                      <p class="text-xs text-gray-500">$59.99</p>
+                    </div>
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p class="text-sm">Coffee Maker</p>
+                      <p class="text-xs text-gray-500">$74.99</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fashion -->
+                <div>
+                  <h2 class="text-lg font-semibold mb-4">Fashion</h2>
+                  <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p>T-Shirt</p>
+                      <p class="text-xs text-gray-500">$12.99</p>
+                    </div>
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p>Sneakers</p>
+                      <p class="text-xs text-gray-500">$120.99</p>
+                    </div>
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p>Jacket</p>
+                      <p class="text-xs text-gray-500">$84.99</p>
+                    </div>
+                    <div class="bg-white p-4 border rounded-md text-center">
+                      <div class="h-20 bg-gray-300 mb-2"></div>
+                      <p>Cap</p>
+                      <p class="text-xs text-gray-500">$0.99</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- PRODUCT PAGE -->
+            <div id="productPage" class="hidden bg-white p-6">
+              <!-- Breadcrumb -->
+              <p class="text-sm text-blue-600 mb-4">
+                Home > Kitchen > Air Fryers
+              </p>
+
+              <div class="grid grid-cols-3 gap-8">
+                <!-- LEFT: IMAGE -->
+                <div class="col-span-1">
+                  <div class="h-64 bg-gray-300 rounded-md"></div>
+                </div>
+
+                <!-- CENTER: DETAILS -->
+                <div class="col-span-1">
+                  <h1 class="text-2xl font-semibold mb-2">
+                    Digital Air Fryer XL, 5.5L Capacity
+                  </h1>
+
+                  <!-- Rating -->
+                  <p class="text-sm text-yellow-500 mb-2">
+                    ★★★★☆ <span class="text-gray-600">(2,341 reviews)</span>
+                  </p>
+
+                  <!-- Price -->
+                  <p class="text-3xl text-red-600 font-semibold mb-2">
+                    $129.99
+                  </p>
+
+                  <p class="text-sm text-gray-600 mb-4">
+                    FREE delivery Tomorrow
+                  </p>
+
+                  <!-- Description -->
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li>• 5.5L large capacity</li>
+                    <li>• Rapid air circulation technology</li>
+                    <li>• Touchscreen controls</li>
+                    <li>• Non-stick basket</li>
+                  </ul>
+                </div>
+
+                <!-- RIGHT: BUY BOX -->
+                <div class="col-span-1 border rounded-md p-4 h-fit">
+                  <p class="text-xl text-red-600 font-semibold mb-2">$129.99</p>
+
+                  <p class="text-sm text-green-600 mb-4">In Stock</p>
+
+                  <button
+                    onclick="goToCart()"
+                    class="w-full bg-yellow-400 py-2 rounded mb-2"
+                  >
+                    Add to Cart
+                  </button>
+
+                  <button
+                    onclick="goToCart()"
+                    class="w-full bg-orange-500 text-white py-2 rounded"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+
+              <!-- RECOMMENDED (distraction 👀) -->
+              <div class="mt-10">
+                <h2 class="text-lg font-semibold mb-4">
+                  Customers also bought
+                </h2>
+
+                <div class="grid grid-cols-4 gap-4">
+                  <div class="bg-gray-100 p-4 text-center">Toaster</div>
+                  <div class="bg-gray-100 p-4 text-center">Microwave</div>
+                  <div class="bg-gray-100 p-4 text-center">Blender</div>
+                  <div class="bg-gray-100 p-4 text-center">Rice Cooker</div>
+                </div>
+              </div>
+            </div>
+            <!-- CART PAGE -->
+            <div id="cartPage" class="hidden bg-gray-100 p-6">
+              <!-- Breadcrumb -->
+              <p class="text-sm text-blue-600 mb-4">Home > Shopping Cart</p>
+
+              <div class="grid grid-cols-3 gap-6">
+                <!-- LEFT: CART ITEMS -->
+                <div class="col-span-2 bg-white p-6 rounded-md">
+                  <h2 class="text-2xl font-semibold mb-4">Shopping Cart</h2>
+
+                  <!-- Item -->
+                  <div class="flex gap-4 border-b pb-4 mb-4">
+                    <!-- Image -->
+                    <div class="w-24 h-24 bg-gray-300 rounded"></div>
+
+                    <!-- Details -->
+                    <div class="flex-1">
+                      <p class="font-semibold">
+                        Digital Air Fryer XL, 5.5L Capacity
+                      </p>
+
+                      <p class="text-sm text-green-600">In Stock</p>
+
+                      <!-- Actions -->
+                      <div class="flex items-center gap-4 mt-2 text-sm">
+                        <select class="border px-2 py-1 rounded">
+                          <option>Qty: 1</option>
+                          <option>Qty: 2</option>
+                        </select>
+
+                        <button class="text-blue-600">Delete</button>
+                        <button class="text-blue-600">Save for later</button>
+                      </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="font-semibold">$129.99</div>
+                  </div>
+
+                  <!-- Subtotal -->
+                  <div class="text-right font-semibold">
+                    Subtotal (1 item): $129.99
+                  </div>
+                </div>
+
+                <!-- RIGHT: CHECKOUT BOX -->
+                <div class="bg-white p-6 rounded-md h-fit">
+                  <p class="text-sm mb-2">Subtotal (1 item)</p>
+
+                  <p class="text-xl font-semibold mb-4">$129.99</p>
+
+                  <button
+                    onclick="completeTask()"
+                    class="w-full bg-yellow-400 py-3 rounded mb-3"
+                  >
+                    Proceed to Checkout
+                  </button>
+
+                  <p class="text-xs text-gray-500">
+                    By placing your order, you agree to Amazon’s conditions of
+                    use.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="completeOverlay"
+                        class="hidden absolute inset-0 bg-gradient-to-br from-primary to-purple-500 
+                                text-white rounded-3xl p-10 z-50 flex flex-col">
+            <div class="max-w-8xl">
+              <!-- Content -->
+              <div class="max-w-4xl">
+                <h1 class="text-5xl font-bold mb-4">Task complete!</h1>
+
+                <p class="text-lg mb-10">
+                  You have successfully find the Air Fryer and complete the
+                  checkout process.
+                </p>
+
+                <h2 class="text-5xl font-bold mb-4">
+                  A cognitive accessibility barrier will now be introduced.
+                </h2>
+
+                <p class="text-lg mb-6">
+                  The same interface will reload with
+                  <span class="font-semibold">modified text</span> and
+                  <span class="font-semibold">labeling</span> throughout. Button
+                  labels, navigation terms, section headings, and confirmation
+                  language have all been changed. The layout, structure, and
+                  your account information remain exactly the same;
+                  <span class="font-semibold"
+                    >only the words have changed.</span
+                  >
+                </p>
+
+                <p class="text-lg font-semibold">
+                  Please re-complete the same task under the new conditions.
+                </p>
+              </div>
+
+              <!-- Button Row -->
+              <div class="flex justify-end mt-16">
+                <a
+                  href="barrier.html"
+                  id="continueButton"
+                  class="bg-white text-primary font-semibold px-8 py-4 rounded-full shadow-2xl text-base flex items-center gap-3 w-auto"
+                >
+                  CONTINUE
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../../src/main.js"></script>
+  </body>
+</html>

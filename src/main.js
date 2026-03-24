@@ -28,12 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const settingsPage = document.getElementById("settingsPage");
 
   if (settingsBtn && profilePage && settingsPage) {
-  settingsBtn.addEventListener("click", () => {
-    profilePage.classList.add("hidden");
-    settingsPage.classList.remove("hidden");
-    profileMenu.classList.add("hidden");
-  });
-}
+    settingsBtn.addEventListener("click", () => {
+      profilePage.classList.add("hidden");
+      settingsPage.classList.remove("hidden");
+      profileMenu.classList.add("hidden");
+    });
+  }
 
   // Notifications page
   const notificationsBtn = document.getElementById("notificationsBtn");
@@ -42,25 +42,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (notificationsBtn && settingsPrivacyPage && notificationsPanel) {
     notificationsBtn.addEventListener("click", () => {
-    settingsPrivacyPage.classList.add("hidden");
-    notificationsPanel.classList.remove("hidden");
-  });
-  }
-  
-
-const toggles = document.querySelectorAll(".notifToggle");
-
-if (toggles.length > 0) {
-  toggles.forEach((toggle) => {
-    toggle.addEventListener("change", () => {
-      const allOff = [...toggles].every((t) => !t.checked);
-
-      if (allOff) {
-        overlay.classList.remove("hidden");
-      }
+      settingsPrivacyPage.classList.add("hidden");
+      notificationsPanel.classList.remove("hidden");
     });
-  });
-}
+  }
+
+  const toggles = document.querySelectorAll(".notifToggle");
+
+  if (toggles.length > 0) {
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("change", () => {
+        const allOff = [...toggles].every((t) => !t.checked);
+
+        if (allOff) {
+          overlay.classList.remove("hidden");
+        }
+      });
+    });
+  }
 
   if (document.body.id === "barrierPage") {
     const overlay = document.getElementById("completeOverlay");
@@ -145,6 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const step1 = document.getElementById("step1");
   const step2 = document.getElementById("step2");
+  const step3 = document.getElementById("step3");
+  const step4 = document.getElementById("step4");
+  const completeOverlay = document.getElementById("completeOverlay");
 
   const dayInput = document.getElementById("dayInput");
   const yearInput = document.getElementById("yearInput");
@@ -338,59 +340,97 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const createBtn = document.getElementById("createBtn");
-const passwordError = document.getElementById("passwordError");
+  const passwordError = document.getElementById("passwordError");
 
-createBtn.addEventListener("click", () => {
-  let hasError = false;
+  const usernameInput = document.getElementById("usernameInput");
+  const usernameError = document.getElementById("usernameError");
 
-  const val = passwordInput.value;
+  usernameInput.addEventListener("input", () => {
+    const username = usernameInput.value.trim();
+    const isUsernameValid = /^\d+$/.test(username);
 
-  const isValid =
-    val.length >= 12 &&
-    /[A-Z]/.test(val) &&
-    /[a-z]/.test(val) &&
-    /\d/.test(val) &&
-    /[!#%,*]/.test(val);
+    if (isUsernameValid) {
+      // ✅ valid → hide error
+      usernameError.classList.add("hidden");
 
-  if (!isValid) {
-    hasError = true;
+      usernameInput.classList.remove("border-2", "border-[#B30000]");
+      usernameInput.classList.add("border-gray-400");
+    } else {
+      // ❌ invalid → show error
+      usernameError.classList.remove("hidden");
 
-    // ❌ show error text
-    passwordError.classList.remove("hidden");
+      usernameInput.classList.remove("border-gray-400");
+      usernameInput.classList.add("border-2", "border-[#B30000]");
+    }
+  });
 
-    // ❌ red border
-    passwordInput.classList.remove("border-gray-400");
-    passwordInput.classList.add("border-2", "border-[#B30000]");
-  } else {
+  createBtn.addEventListener("click", () => {
+    let hasError = false;
+
+    // ===== USERNAME VALIDATION =====
+    const username = usernameInput.value.trim();
+    const isUsernameValid = /^\d+$/.test(username);
+
+    if (!isUsernameValid) {
+      hasError = true;
+
+      usernameError.classList.remove("hidden");
+
+      usernameInput.classList.remove("border-gray-400");
+      usernameInput.classList.add("border-2", "border-[#B30000]");
+    } else {
+      usernameError.classList.add("hidden");
+
+      usernameInput.classList.remove("border-2", "border-[#B30000]");
+      usernameInput.classList.add("border-gray-400");
+    }
+
+    // ===== PASSWORD VALIDATION =====
+    const val = passwordInput.value;
+
+    const isPasswordValid =
+      val.length >= 12 &&
+      /[A-Z]/.test(val) &&
+      /[a-z]/.test(val) &&
+      /\d/.test(val) &&
+      /[!#%,*]/.test(val);
+
+    if (!isPasswordValid) {
+      hasError = true;
+
+      passwordError.classList.remove("hidden");
+
+      passwordInput.classList.remove("border-gray-400");
+      passwordInput.classList.add("border-2", "border-[#B30000]");
+    } else {
+      passwordError.classList.add("hidden");
+
+      passwordInput.classList.remove("border-2", "border-[#B30000]");
+      passwordInput.classList.add("border-gray-400");
+    }
+
+    // ===== PROCEED =====
+    if (!hasError) {
+      step3.classList.add("hidden");
+      step4.classList.remove("hidden");
+    }
+  });
+
+  const createAccountBtn = document.getElementById("createAccountBtn");
+  const termsCheckbox = document.getElementById("termsCheckbox");
+  const termsError = document.getElementById("termsError");
+
+  createAccountBtn.addEventListener("click", () => {
+    if (!termsCheckbox.checked) {
+      // ❌ show error
+      termsError.classList.remove("hidden");
+      return;
+    }
+
     // ✅ remove error
-    passwordError.classList.add("hidden");
-
-    passwordInput.classList.remove("border-2", "border-[#B30000]");
-    passwordInput.classList.add("border-gray-400");
-  }
-
-  if (!hasError) {
-    console.log("Form complete ✅");
-    step3.classList.add("hidden");
-    step4.classList.remove("hidden");
-  }
-});
-
-const createAccountBtn = document.getElementById("createAccountBtn");
-const termsCheckbox = document.getElementById("termsCheckbox");
-const termsError = document.getElementById("termsError");
-
-createAccountBtn.addEventListener("click", () => {
-  if (!termsCheckbox.checked) {
-    // ❌ show error
-    termsError.classList.remove("hidden");
-    return;
-  }
-
-  // ✅ remove error
-  termsError.classList.add("hidden");
-
-  console.log("Account successfully created 🎉");
-});
-
+    termsError.classList.add("hidden");
+    completeOverlay.classList.remove("hidden");
+    completeOverlay.classList.add("flex", "flex-col");
+    console.log("Account successfully created 🎉");
+  });
 });

@@ -315,27 +315,23 @@
 
             <!-- Username -->
             <div class="mb-8">
-              <label class="block mb-2 text-[#404040]">Unique username</label>
+              <label class="block text-[#404040] mb-2">Unique username</label>
               <input
                 id="usernameInput"
                 type="text"
                 class="w-1/2 border border-gray-400 px-4 py-3"
               />
-            </div>
-
-            <div
-              id="usernameError"
-              class="flex items-center gap-3 mt-3 text-[#B30000] hidden"
-            >
               <div
-                class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+                id="usernameError"
+                class="flex items-center gap-3 mb-2 mt-3 text-[#B30000] hidden"
               >
-                !
+                <div
+                  class="w-5 h-5 flex items-center justify-center bg-[#B30000] text-white rounded-full text-xs font-bold"
+                >
+                  !
+                </div>
+                <p class="text-sm">This username is already taken</p>
               </div>
-              <p class="text-sm">
-                Username must be at least 4 characters and contain only letters
-                and numbers
-              </p>
             </div>
 
             <!-- Password -->
@@ -508,7 +504,9 @@
                 />
                 <span>
                   By selecting “Create Account”, you are confirming that you
-                  have read and agree to the <span class = "underline">Terms of Use and Privacy Policy</span>.
+                  have read and agree to the
+                  <span class="underline">Terms of Use and Privacy Policy</span
+                  >.
                 </span>
               </label>
             </div>
@@ -538,6 +536,57 @@
               </button>
             </div>
           </div>
+          <div
+          id="completeOverlay"
+          class="-inset-[8px] rounded-3xl hidden absolute bg-gradient-to-br from-primary to-purple-500 text-white p-16 z-50 flex flex-col"
+        >
+          <div class="max-w-7xl">
+            <!-- Content -->
+            <div class="max-w-4xl">
+              <h1 class="text-5xl font-bold mb-4">Task complete!</h1>
+
+              <p class="text-lg mb-10">
+                You have successfully created an account.
+              </p>
+
+              <h2 class="text-5xl font-bold mb-4">
+                A feedback-based accessibility barrier will now be introduced.
+              </h2>
+
+              <p class="text-lg mb-10">
+                You will complete the same task again by filling out all the required fields correctly and clicking ‘Create Account’ to create an account.
+              </p>
+
+              <p class="text-lg font-semibold">
+                Please re-complete the same task under the new conditions.
+              </p>
+            </div>
+
+            <!-- Button Row -->
+            <div class="flex justify-end mt-16">
+              <a
+                href="barrier.html"
+                id="continueButton"
+                class="bg-white text-primary font-semibold px-8 py-4 rounded-full shadow-2xl text-base flex items-center gap-3 w-auto"
+              >
+                CONTINUE
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
         </div>
       </main>
     </div>

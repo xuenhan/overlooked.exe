@@ -897,6 +897,10 @@ video {
   margin-left: auto;
 }
 
+.-mt-2{
+  margin-top: -0.5rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -1201,6 +1205,10 @@ video {
 
 .max-w-\[1200px\]{
   max-width: 1200px;
+}
+
+.max-w-xl{
+  max-width: 36rem;
 }
 
 .flex-1{
@@ -2456,6 +2464,11 @@ video {
 .bg-\[\#404040\]{
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#F5F5F5\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-br{

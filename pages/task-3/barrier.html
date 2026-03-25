@@ -135,67 +135,198 @@
         </div>
 
         <div class="border border-[#404040] bg-white relative p-16">
-          <div class="p-10 bg-white">
-  <div class="grid grid-cols-2 gap-6 mb-6">
-    <input id="firstName" class="border border-[#404040] p-3" placeholder="First Name*" />
-    <input id="lastName" class="border border-[#404040] p-3" placeholder="Last Name*" />
-  </div>
+          <div id="formSection" class="p-10 bg-white">
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <input
+                id="firstName"
+                class="border border-[#404040] p-3"
+                placeholder="First Name*"
+              />
+              <input
+                id="lastName"
+                class="border border-[#404040] p-3"
+                placeholder="Last Name*"
+              />
+            </div>
 
-  <div class="grid grid-cols-3 gap-6 mb-6">
-    <input id="birthDate" class="border border-[#404040] p-3" placeholder="Birth Date*" />
-    <div class="relative">
-      <select id="birthYear"
-        class="border border-[#404040] p-3 w-full appearance-none pr-10 pr-10 text-gray-400">
-        <option value="" disabled selected>Birth Year*</option>
-      </select>
+            <div class="grid grid-cols-3 gap-6 mb-6">
+              <input
+                id="birthDate"
+                class="border border-[#404040] p-3"
+                placeholder="Birth Date (MMDD)*"
+                maxlength="4"
+              />
+              <div class="relative">
+                <select
+                  id="birthYear"
+                  class="border border-[#404040] p-3 w-full appearance-none pr-10 pr-10 text-gray-400"
+                >
+                  <option value="" disabled selected>Birth Year*</option>
+                </select>
 
-  <!-- Custom Arrow -->
-  <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-    <svg class="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M5 7l5 6 5-6H5z" />
-    </svg>
-  </div>
-</div>
-    <input id="gender" class="border border-[#404040] p-3" placeholder="Gender*" />
-  </div>
+                <!-- Custom Arrow -->
+                <div
+                  class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                >
+                  <svg
+                    class="w-5 h-5 text-gray-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M5 7l5 6 5-6H5z" />
+                  </svg>
+                </div>
+              </div>
+              <input
+                id="gender"
+                class="border border-[#404040] p-3"
+                placeholder="Gender*"
+              />
+            </div>
 
-  <div class="grid grid-cols-2 gap-6 mb-6">
-    <input id="username" class="border border-[#404040] p-3" placeholder="Username*" />
-    <input id="password" class="border border-[#404040] p-3" placeholder="Password*" />
-  </div>
+            <div class="grid grid-cols-2 gap-6 mb-6">
+              <input
+                id="username"
+                class="border border-[#404040] p-3"
+                placeholder="Username*"
+              />
+              <input
+                id="password"
+                type="password"
+                class="border border-[#404040] p-3"
+                placeholder="Password*"
+              />
+            </div>
 
-  <div class="grid grid-cols-2 gap-6 text-sm text-gray-700 mb-6">
-    <label><input type="checkbox" /> Notifications for product updates</label>
-    <label><input type="checkbox" /> Notifications for news and announcements</label>
-    <label><input type="checkbox" /> Notifications for promotions and offers</label>
-    <label><input type="checkbox" /> Notifications for tips and tutorials</label>
-  </div>
+            <div class="grid grid-cols-2 gap-6 text-sm text-gray-700 mb-6">
+              <label
+                ><input type="checkbox" /> Notifications for product
+                updates</label
+              >
+              <label
+                ><input type="checkbox" /> Notifications for news and
+                announcements</label
+              >
+              <label
+                ><input type="checkbox" /> Notifications for promotions and
+                offers</label
+              >
+              <label
+                ><input type="checkbox" /> Notifications for tips and
+                tutorials</label
+              >
+            </div>
 
-  <p class="text-sm text-gray-600 mb-6">
-    By selecting “Create Account”, you agree to the Terms of Use and Privacy Policy.
-  </p>
+            <p class="text-sm text-gray-600 mb-6">
+              By selecting “Create Account”, you agree to the
+              <span id="termsLink" class="underline"
+                >Terms of Use and Privacy Policy</span
+              >.
+            </p>
 
+            <div class="flex items-center">
+              <!-- ERROR -->
+              <div
+                id="formError"
+                class="flex items-center gap-2 text-gray-500 hidden"
+              >
+                <div
+                  class="w-5 h-5 flex items-center justify-center bg-[#404040] text-white rounded-full text-xs font-bold"
+                >
+                  !
+                </div>
+                <span class="text-sm">There are missing fields</span>
+              </div>
 
-  <div class="flex items-center">
+              <!-- BUTTON -->
+              <button
+                onclick="validateForm()"
+                class="ml-auto bg-primary text-white px-6 py-3 rounded-full"
+              >
+                Create Account
+              </button>
+            </div>
+          </div>
+          <!-- TERMS SCREEN -->
+          <div id="termsScreen" class="hidden p-10 bg-white">
+            <div class="p-6 max-w-xl mx-auto text-center">
+              <h2 class="text-4xl font-bold mb-12 font-manrope text[#404040]">
+                Terms & Conditions
+              </h2>
 
-  <!-- ERROR -->
-  <div id="formError" class="flex items-center gap-2 text-gray-500 hidden">
-    <div class="w-5 h-5 flex items-center justify-center bg-[#404040] text-white rounded-full text-xs font-bold">
-      !
-    </div>
-    <span class="text-sm">There are missing fields</span>
-  </div>
+              <p class="text-md text-gray-600 mb-4 text-left text-justify">
+                By creating an account, you agree to provide accurate and
+                complete information. This information will only be used to
+                support your experience within this application and will not be
+                sold or shared with third parties.
+              </p>
 
-  <!-- BUTTON -->
-  <button onclick="validateForm()" 
-    class="ml-auto bg-blue-600 text-white px-6 py-3 rounded-full">
-    Create Account
-  </button>
+              <p class="text-md text-gray-600 mb-4 text-left text-justify">
+                You are responsible for maintaining the confidentiality of your
+                account credentials. While we take reasonable steps to protect
+                your information, we cannot guarantee absolute security.
+              </p>
 
-</div>
+              <p class="text-md text-gray-600 mb-12 text-left text-justify">
+                By continuing, you agree to these terms and acknowledge that
+                your information may be used to personalize your experience.
+              </p>
 
-</div>
+              <button
+                id="acceptTerms"
+                class="bg-primary text-white px-6 py-3 rounded-full"
+              >
+                I have read the terms and conditions
+              </button>
+            </div>
+          </div>
+          <div
+          id="completeOverlay"
+          class="-inset-[8px] rounded-3xl hidden absolute bg-gradient-to-br from-primary to-purple-500 text-white p-16 z-50 flex flex-col"
+        >
+          <div class="max-w-3xl">
+            <!-- Content -->
+            <div class="max-w-4xl">
+              <h1 class="text-6xl font-bold mt-10 mb-16">Task complete!</h1>
+
+              <p class="text-lg mb-10">
+                You have successfully created an account!
+              </p>
+
+              <p class="text-lg mb-20">Not as easy the second time, was it?</p>
+
+              <p class="text-lg font-semibold">
+                Click CONTINUE to proceed to reflection.
+              </p>
+            </div>
+
+            <!-- Button Row -->
+            <div class="flex justify-end mt-16">
+              <a
+                href="reflection.html"
+                id="continueButton"
+                class="bg-white text-primary font-semibold px-8 py-4 rounded-full shadow-2xl text-base flex items-center gap-3 w-auto"
+              >
+                CONTINUE
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
+        </div>
+        
       </main>
     </div>
     <script src="../../src/main.js"></script>

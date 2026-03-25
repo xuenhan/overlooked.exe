@@ -468,6 +468,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+let termsAccepted = false;
+
 function validateForm() {
   const formError = document.getElementById("formError");
 
@@ -486,15 +488,57 @@ function validateForm() {
   fields.forEach((field) => {
     if (!field || field.value.trim() === "") {
       hasError = true;
-    } 
+    }
   });
 
-  if (hasError) {
+  const birthDate = document.getElementById("birthDate").value.trim();
+
+  // MMDD validation
+  const isValidDate = /^(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$/.test(
+    birthDate,
+  );
+
+  if (!isValidDate) {
+    hasError = true;
+  }
+
+  if (hasError || !termsAccepted) {
     formError.classList.remove("hidden");
     return;
   }
 
   // ✅ success
   formError.classList.add("hidden");
-  completeTask();
+  const overlay = document.getElementById("completeOverlay");
+  overlay.classList.remove("hidden");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const termsLink = document.getElementById("termsLink");
+  const termsScreen = document.getElementById("termsScreen");
+  const formSection = document.getElementById("formSection");
+  const acceptBtn = document.getElementById("acceptTerms");
+
+  if (termsLink && termsScreen && formSection && acceptBtn) {
+    termsLink.addEventListener("click", () => {
+      formSection.classList.add("hidden");
+      termsScreen.classList.remove("hidden");
+    });
+
+    acceptBtn.addEventListener("click", () => {
+      termsAccepted = true; // ✅ mark as accepted
+
+      termsScreen.classList.add("hidden");
+      formSection.classList.remove("hidden");
+    });
+  }
+
+  const birthYear = document.getElementById("birthYear");
+
+  birthYear.addEventListener("change", () => {
+    if (birthYear.value !== "") {
+      birthYear.classList.remove("text-gray-400");
+      birthYear.classList.add("text-[#404040]");
+    }
+  });
+});

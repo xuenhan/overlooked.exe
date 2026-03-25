@@ -453,3 +453,48 @@ function completeTask() {
   container.classList.remove("border", "border-gray-500", "bg-white");
   document.getElementById("topBar").classList.add("hidden");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("birthYear");
+  if (!select) return;
+
+  const currentYear = new Date().getFullYear();
+
+  for (let year = currentYear; year >= 1900; year--) {
+    const option = document.createElement("option");
+    option.value = year;
+    option.textContent = year;
+    select.appendChild(option);
+  }
+});
+
+function validateForm() {
+  const formError = document.getElementById("formError");
+
+  const fields = [
+    document.getElementById("firstName"),
+    document.getElementById("lastName"),
+    document.getElementById("birthDate"),
+    document.getElementById("birthYear"),
+    document.getElementById("gender"),
+    document.getElementById("username"),
+    document.getElementById("password"),
+  ];
+
+  let hasError = false;
+
+  fields.forEach((field) => {
+    if (!field || field.value.trim() === "") {
+      hasError = true;
+    } 
+  });
+
+  if (hasError) {
+    formError.classList.remove("hidden");
+    return;
+  }
+
+  // ✅ success
+  formError.classList.add("hidden");
+  completeTask();
+}

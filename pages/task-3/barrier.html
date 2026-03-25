@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlooked.exe</title>
+
+    <!--Script to import tailwind css-->
+    <link href="../../dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#FFFFFF]">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="w-50 bg-primary text-white p-4 flex flex-col sticky top-0 h-screen"
+      >
+        <a
+          href="https://overlooked-exe.carrd.co"
+          class="absolute top-6 left-6 text-white text-3xl"
+        >
+          ✕
+        </a>
+
+        <nav class="flex flex-col mt-16">
+          <a
+            href="../main-experience.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">0</span>
+            <span>Homepage</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-1/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-semibold font-manrope">1</span>
+            <span>Finding Information</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-2/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">2</span>
+            <span>Navigating A Menu</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="#"
+            class="flex items-center gap-3 py-2 px-4 rounded-md bg-white text-primary text-sm font-semibold font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">3</span>
+            <span>Submitting a Form</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+
+          <a
+            href="../task-4/tutorial.html"
+            class="flex items-center gap-3 py-2 px-4 text-sm font-manrope"
+          >
+            <span class="text-sm font-bold font-manrope">4</span>
+            <span>Understanding Next Steps</span>
+          </a>
+
+          <hr class="border-white/40 my-2 mx-2" />
+        </nav>
+      </aside>
+      <main class="flex-1 pt-10 px-20 pb-6">
+        <!-- Top Header -->
+        <div class="mb-10">
+          <h1 class="text-2xl font-semibold text-secondary mb-6 font-inter">
+            Your Task: Fill out the required fields completely, then click
+            <span class="text-primary">‘Create Account’</span>
+          </h1>
+
+          <!-- Progress Bar -->
+          <div class="flex items-start gap-4 mb-4">
+            <!-- Step 1 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Tutorial</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Task</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-blue-600 rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-blue-600 rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Barrier</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex-1 text-center relative">
+              <div class="h-2 bg-[#D0E2FF] rounded-full mb-4"></div>
+
+              <!-- Dot -->
+              <div
+                class="w-2 h-2 bg-[#D0E2FF] rounded-full absolute left-1/2 -translate-x-1/2 top-3"
+              ></div>
+
+              <p class="text-sm text-gray-600 mt-4">Reflection</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+
+        <div class="border border-[#404040] bg-white relative p-16">
+          <div class="p-10 bg-white">
+  <div class="grid grid-cols-2 gap-6 mb-6">
+    <input id="firstName" class="border border-[#404040] p-3" placeholder="First Name*" />
+    <input id="lastName" class="border border-[#404040] p-3" placeholder="Last Name*" />
+  </div>
+
+  <div class="grid grid-cols-3 gap-6 mb-6">
+    <input id="birthDate" class="border border-[#404040] p-3" placeholder="Birth Date*" />
+    <div class="relative">
+      <select id="birthYear"
+        class="border border-[#404040] p-3 w-full appearance-none pr-10 pr-10 text-gray-400">
+        <option value="" disabled selected>Birth Year*</option>
+      </select>
+
+  <!-- Custom Arrow -->
+  <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+    <svg class="w-5 h-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M5 7l5 6 5-6H5z" />
+    </svg>
+  </div>
+</div>
+    <input id="gender" class="border border-[#404040] p-3" placeholder="Gender*" />
+  </div>
+
+  <div class="grid grid-cols-2 gap-6 mb-6">
+    <input id="username" class="border border-[#404040] p-3" placeholder="Username*" />
+    <input id="password" class="border border-[#404040] p-3" placeholder="Password*" />
+  </div>
+
+  <div class="grid grid-cols-2 gap-6 text-sm text-gray-700 mb-6">
+    <label><input type="checkbox" /> Notifications for product updates</label>
+    <label><input type="checkbox" /> Notifications for news and announcements</label>
+    <label><input type="checkbox" /> Notifications for promotions and offers</label>
+    <label><input type="checkbox" /> Notifications for tips and tutorials</label>
+  </div>
+
+  <p class="text-sm text-gray-600 mb-6">
+    By selecting “Create Account”, you agree to the Terms of Use and Privacy Policy.
+  </p>
+
+
+  <div class="flex items-center">
+
+  <!-- ERROR -->
+  <div id="formError" class="flex items-center gap-2 text-gray-500 hidden">
+    <div class="w-5 h-5 flex items-center justify-center bg-[#404040] text-white rounded-full text-xs font-bold">
+      !
+    </div>
+    <span class="text-sm">There are missing fields</span>
+  </div>
+
+  <!-- BUTTON -->
+  <button onclick="validateForm()" 
+    class="ml-auto bg-blue-600 text-white px-6 py-3 rounded-full">
+    Create Account
+  </button>
+
+</div>
+
+</div>
+        </div>
+      </main>
+    </div>
+    <script src="../../src/main.js"></script>
+  </body>
+</html>

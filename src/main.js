@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   usernameInput.addEventListener("input", () => {
     const username = usernameInput.value.trim();
-    const isUsernameValid = /^\d+$/.test(username);
+    const isUsernameValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/.test(username);
 
     if (isUsernameValid) {
       // ✅ valid → hide error
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== USERNAME VALIDATION =====
     const username = usernameInput.value.trim();
-    const isUsernameValid = /^\d+$/.test(username);
+    const isUsernameValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/.test(username);
 
     if (!isUsernameValid) {
       hasError = true;
